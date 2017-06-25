@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Dish and Dash</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="jquery.mobile-1.4.2.min.css" />
+        <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="jquery.mobile-1.4.2.min.js"></script>
+        <script src="application.js"></script>
+    </head>
+   
+    <body>
+         
+        <div data-role="page">
+            <div data-role="header">
+                <a href="index.html">Home</a>
+                <h1>Dish and Dash</h1>
+                <a href="listnotes.html" data-ajax="false">List Grocery</a> 
+            </div>
+            <div data-role="content">
+                <form>
+                    <div>
+                        <fieldset class="ui-field-contain">
+                            <label for="day">Select Grocery Type</label>
+                            <select name="day" id="expense">
+                               
+                               
+                                <option value="wed">Dry</option>
+                                 <option value="wed">Fresh Vegetables</option>
+                             
+                                 
+                                 
+                                  
+                            </select>
+                        </fieldset>
+
+                    </div>
+                    <div>
+                        <input id="title" type="text" placeholder="Grocery Name" />
+                    </div>
+                    <div>
+                        <textarea id="note" placeholder="Weight in lb/Quantity in Number"></textarea>
+                    </div>
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a">
+                            <input id="btnReset" type="submit" value="Reset" />
+                        </div>
+                        <div class="ui-block-b">
+                            <input id="btnAddNote" type="button" value="Add Grocery" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div data-role="footer">
+                <h4>CopyRight Pinkal Patel</h4>
+            </div>
+        </div>
+    </body>
+</html>

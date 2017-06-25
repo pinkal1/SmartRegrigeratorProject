@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title> Summary Report</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="jquery.mobile-1.4.2.min.css" />
+        <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="jquery.mobile-1.4.2.min.js"></script>
+        <script src="application.js"></script>
+    </head>
+    <body>
+        <div data-role="page">
+            <div data-role="header">
+                <a href="index.html">Home</a>
+                <h1> Summary Report</h1>
+                <a href="addnotes.html" data-ajax="false">Add notes</a> 
+            </div>
+            <div data-role="content">
+                <ul id="notesList" data-role="listview" data-inset="true">
+                    <li data-role="list-divider"> Record</li>
+                    <li id="noNotes">No notes found</li>
+                </ul>
+            </div>
+            <div data-role="footer">
+                <h4>CopyRight Pinkal Patel</h4>
+            </div>
+        </div>
+    </body>
+</html>

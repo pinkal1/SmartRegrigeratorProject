@@ -1,0 +1,202 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar Events</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.6.1/fullcalendar.min.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h1>Monthly food planner</h1>
+                <p>from <a href="http://www.dishanddash.com" target="_blank">http://www.dishanddash.com</a></p>
+                <br />
+                <div id="bootstrapModalFullCalendar"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="fullCalModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span> <span class="sr-only">close</span></button>
+                    <h4 id="modalTitle" class="modal-title"></h4>
+                </div>
+                <div id="modalBody" class="modal-body"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <a class="btn btn-primary" id="eventUrl" target="_blank">Event Page</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.2/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.6.1/fullcalendar.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#bootstrapModalFullCalendar').fullCalendar({
+                header: {
+                    left: '',
+                    center: 'prev title next',
+                    right: ''
+                },
+                eventClick:  function(event, jsEvent, view) {
+                    $('#modalTitle').html(event.title);
+                    $('#modalBody').html(event.description);
+                    $('#eventUrl').attr('href',event.url);
+                    $('#fullCalModal').modal();
+                    return false;
+                },
+                events:
+                [
+                   {
+                      "title":"BreakFast,Lunch",
+                      "allday":"false",
+                      "description":"<p>Breakfast:Egg Curry.</p>\n\
+          <p>Lunch:Chicken Korma</p>\n\n\
+<p>Calorie Burned :1200</p>\n\
+"
+            ,
+                      "start":moment().subtract('days',14),
+                      "end":moment().subtract('days',14),
+                      "url":"http://www.mikesmithdev.com/blog/coding-without-music-vs-coding-with-music/"
+                   },
+                   {
+                      "title":"Lunch",
+                      "allday":"false",
+                      "description":"<p>Lunch</p>\n\
+          <p>Lunch:Paneer Tikka</p>\n\n\
+<p>Calorie Burned :450</p>\n\ ",
+                      "start":moment().subtract('days',10),
+                      "end":moment().subtract('days',10),
+                      "url":"http://www.mikesmithdev.com/blog/youtube-video-event-tracking-with-google-analytics/"
+                   },
+                   {
+                      "title":"Lunch Dinner",
+                      "allday":"false",
+                      "description":"<p>Lunch :Veg Kofta</p>\n\
+          <p>Dinner : Navratna Korma</p>\n\n\
+<p>Calorie Burned :550</p>\n\"",
+                      "start":moment().subtract('days',6),
+                      "end":moment().subtract('days',6),
+                      "url":"http://www.mikesmithdev.com/blog/what-if-your-website-were-an-animal/"
+                   },
+                   {
+                      "title":"Dinner",
+                      "allday":"false",
+                      "description":"<p>Mexican Pizza.</p><p>Calorie Burned :450</p>",
+                      "start":moment().subtract('days',2),
+                      "end":moment().subtract('days',2),
+                      "url":"http://www.mikesmithdev.com/blog/how-to-make-a-qr-code-in-asp-net/"
+                   },
+                   {
+                      "title":"Lunch",
+                      "allday":"false",
+                      "description":"<p>Pav Bhaji</p><p>Calorie Burned:350</p>",
+                      "start":moment(),
+                      "end":moment(),
+                      "url":"http://www.mikesmithdev.com/blog/name-that-nes-soundtrack/"
+                   },
+                   {
+                      "title":"Dinner",
+                      "allday":"false",
+                      "description":"<p>Garlic Rice.</p><p>Calorie Burned:200</p>",
+                      "start":moment().add('days',3),
+                      "end":moment().add('days',3),
+                      "url":"http://www.mikesmithdev.com/blog/worst-job-titles-in-internet-and-info-tech/"
+                   },
+                   {
+                      "title":"Dinner",
+                      "allday":"false",
+                      "description":"<p>Lasangna</p><p>Calorie Burned:200</p>",
+                      "start":moment().add('days',5),
+                      "end":moment().add('days',5),
+                      "url":"http://www.mikesmithdev.com/blog/jquery-full-calendar/"
+                   },
+                   {
+                      "title":"Dinner",
+                      "allday":"false",
+                      "description":"<p>Avocado Bloomers</p><p>Calorie Burned:389</p>",
+                      "start":moment().add('days',9),
+                      "end":moment().add('days',9),
+                      "url":"http://www.mikesmithdev.com/blog/keep-important-licensing-comments-dotnet-bundling-minification/"
+                   },
+                   {
+                      "title":"Dinner",
+                      "allday":"false",
+                      "description":"<p>Paparazzi.</p><p>Calories Burned:230!</p>",
+                      "start":moment().add('days',11),
+                      "end":moment().add('days',11),
+                      "url":"http://www.mikesmithdev.com/blog/aspnet-bundling-changes-output-with-user-agent-eureka-1/"
+                   },
+                   {
+                      "title":"Lunch",
+                      "allday":"false",
+                      "description":"<p>Pizza .</p><p>Calories Burned:234</p>",
+                       "start":moment().add('days',15),
+                      "end":moment().add('days',15),
+                      "url":"http://www.mikesmithdev.com/blog/worst-job-titles-in-internet-and-info-tech/"
+                   },
+                   {
+                      "title":"Dinner",
+                      "allday":"false",
+                      "description":"<p>Italian pasta</p><p>Nothing to see!</p>",
+                      "start":moment().add('days',22),
+                      "end":moment().add('days',22),
+                      "url":"http://www.mikesmithdev.com/blog/worst-job-titles-in-internet-and-info-tech/"
+                   },
+                   {
+                      "title":"Dinner",
+                      "allday":"false",
+                      "description":"<p>Qaesalida</p><p>Calories Burned:289</p>",
+                      "start":moment().subtract('days',20),
+                      "end":moment().subtract('days',20),
+                      "url":"http://www.mikesmithdev.com/blog/migrating-from-asp-net-to-ghost-node-js/"
+                   },
+                   {
+                      "title":"Dinner",
+                      "allday":"false",
+                      "description":"<p>Chalupa</p><p>Calories Burned:323</p>",
+                      "start":moment().add('days',25),
+                      "end":moment().add('days',25),
+                      "url":"http://www.mikesmithdev.com/blog/pdf-secure-access-and-log-downloads/"
+                   },
+                   {
+                      "title":"Lunch",
+                      "allday":"false",
+                      "description":"<p>Mexican sausalita.</p><p>Calories Burned:312</p>",
+                      "start":moment().subtract('days',27),
+                      "end":moment().subtract('days',27),
+                      "url":"http://www.mikesmithdev.com/blog/migrating-from-asp-net-to-ghost-node-js/"
+                   },
+                   {
+                      "title":"Lunch",
+                      "allday":"false",
+                      "description":"<p>Tomatina salad.</p><p>Calories Burned:213</p>",
+                      "start":moment().subtract('days',22),
+                      "end":moment().subtract('days',22),
+                      "url":"http://www.mikesmithdev.com/blog/migrating-from-asp-net-to-ghost-node-js/"
+                   },
+                   {
+                      "title":"Dinner",
+                      "allday":"false",
+                      "description":"<p>Special Day.</p><p>Family Event</p>",
+                      "start":moment().add('days',27),
+                      "end":moment().add('days',27),
+                      "url":"http://www.mikesmithdev.com/blog/migrating-from-asp-net-to-ghost-node-js/"
+                   }
+                ]
+            });
+        });
+    </script>
+</body>
+</html>
