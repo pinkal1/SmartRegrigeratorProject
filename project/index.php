@@ -29,7 +29,7 @@
         <ul class="dropdown-menu">
           <li><a href="listnotes.html">Manual added  Inventory</a></li>
           <li><a href="addnotes1.html">Add Inventory</a></li>
-          <li><a href="add.html">Scanned Inventory</a></li>
+          <li><a href="upload.php">Scanned Inventory</a></li>
         </ul>
       </li>
         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Type of Cuisine<span class="caret"></span></a>

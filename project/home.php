@@ -11,6 +11,13 @@
  // select loggedin users detail
  $res=mysql_query("SELECT * FROM users WHERE userId=".$_SESSION['user']);
  $userRow=mysql_fetch_array($res);
+
+ //scanned itesm
+ //$itemsQuery = mysql_query("SELECT * FROM scnann_items");
+// $items = mysql_fetch_array($itemsQuery);
+
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -52,6 +59,29 @@
         </div><!--/.nav-collapse -->
       </div>
     </nav> 
+
+<!-- <div>
+  <?php 
+   if(is_array($items)){ ?>
+    <table>
+    <thead>
+      <tr>
+        <td>Item Name</td>
+      </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($items as $key => $value) { ?>
+     <tr>
+        <td><?php echo $items['item_name']; ?></td>
+      </tr>
+    <?php } ?>
+      
+
+
+    </tbody>
+    </table>
+    <?php } ?>
+</div> -->
 
  <div id="wrapper">
 
